@@ -383,6 +383,13 @@ void Camera::setROI(const int x_offset, const int y_offset, const int roi_width,
   roi_y_offset_ = y_offset;
 }
 
+void Camera::setPacketSize(const int packet_size)
+{
+  // Set GigE Packet Size
+  setProperty(node_map_, "GevSCPSPacketSize", packet_size);
+}
+
+
 void Camera::setGain(const float& gain)
 {
   setProperty(node_map_, "GainAuto", "Off");
